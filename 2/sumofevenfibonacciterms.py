@@ -16,14 +16,14 @@ def sumEvenFibonacciTerms(limit):
             sum = sum + term
         nextTerm = nextTerm + term
 
-    while nextTerm < limit:
+    while nextTerm <= limit:
         if isEven(nextTerm):
             sum = sum + nextTerm
         previousTwoTerms.pop(0)
         previousTwoTerms.append(nextTerm)
         nextTerm = sumTwoTermList(previousTwoTerms)
 
-    print "The sum of all even Fibonacci terms below {} is: {}".format(limit, sum)
+    print "The sum of all even Fibonacci terms that do not exceed {} is: {}".format(limit, sum)
 
 def isEven(term):
     return (term % 2) == 0
